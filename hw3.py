@@ -2,8 +2,8 @@
 
 a = -1.6
 b = 2.99
-a = round(a) 
-b = round(b)
+a = int(a) 
+b = int(b)
 print(a, b)
 
 #exercise2
@@ -33,49 +33,30 @@ print(space.strip())
 #exercise6
 
 school = [
-    {"class": "1a", "students": 27},
-    {"class": "1b", "students": 28},
-    {"class": "2a", "students": 30},
-    {"class": "2b", "students": 25},
-    {"class": "3a", "students": 29},
-    {"class": "3b", "students": 24},
-    {"class": "4a", "students": 25},
-    {"class": "4b", "students": 31},
-    {"class": "5a", "students": 27},
-    {"class": "5b", "students": 26},
+    {"1" : 27,
+    "2" : 28,
+    "3" : 30,
+    "4" : 25,
+    "5" : 29,
+    "6" : 24,
+    "7" : 25,
+    "8" : 31,
+    "9" : 27,
+    "10" : 26},
 ]
 print(school)
 
-#total students for exercise6
-
-totalS = 0
-for school_classes in school:
-    totalS += school_classes["students"]
-print(totalS)
-
 #exercise7 
-#variant1(Удаляет и возвращает (дает сохранить в переменную))
 
 clothes = ["T-shirt", 345, "Jeans", "Dress", "Sweater"]
-my_list = clothes.pop(1)
-print(clothes)
-
-#variant2(Ищет текст и удаляет его)
-
-clothes = ["T-shirt", 345, "Jeans", "Dress", "Sweater"]
-clothes.remove(345)
-print(clothes)
-
-#variant3(Просто стирает (ничего не возвращает))
-clothes = ["T-shirt", 345, "Jeans", "Dress", "Sweater"]
-del clothes[1]
-print(clothes)
+print(clothes[1])
 
 #exercise8
 
-word = "bussnesman"
-print(word.startswith("bussnes"))
-print(word.endswith("bussnes"))
+word1 = "businessman"
+word2 = "nes"
+is_inside = word2 in word1
+print(is_inside)
 
 #exercise9 #y #nesgt
 x = "My name is Agent Smith"
