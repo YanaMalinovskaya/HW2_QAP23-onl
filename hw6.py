@@ -3,6 +3,7 @@
 # Проверь что файл-копия создался.
 
 import os
+import file_utils
 
 def copy_file(source: str, destination: str) -> bool:
     try:
@@ -16,16 +17,7 @@ def copy_file(source: str, destination: str) -> bool:
     
     except Exception:
         return False
-
-if __name__ == "__main__":
-    with open("test_source.txt", "w", encoding="utf-8") as f:
-        f.write("Привет! Это данные для копирования.")
-
-    if copy_file("test_source.txt", "test_destination.txt"):
-        print("Успех: Файл скопирован и существует!")
-    else:
-        print("Ошибка: Что-то пошло не так.")
-
+    
 #2. Создай файл grades.txt где каждая строка содержит имя студента и его оценку через запятую:
 #Анна,85
 #Иван,72
@@ -85,8 +77,6 @@ print(f"Полных лет: {age_calculator(date_input)}")
 # и возвращает словарь. 
 #В main.py импортируй и протестируй все три.
 
-import file_utils
-
 def main():
     file_name = "test.txt"
     test_data = ["Привет мир", "Python это круто", "Мир любит Python", "мир!"]
@@ -99,12 +89,10 @@ def main():
 
     stats = file_utils.count_words(file_name)
     print("3. Статистика слов:")
+
     for word, count in stats.items():
         print(f"   - {word}: {count}")
-
-if __name__ == "__main__":
-    main()
-
+    
 #5. Напиши функцию password_checker(correct_password) которая возвращает вложенную функцию check(password). 
 # Вложенная принимает пароль и возвращает True если совпадает, иначе False.
 
@@ -118,3 +106,19 @@ my_check = password_checker("secret123")
 
 print(my_check("admin"))      
 print(my_check("secret123")) 
+
+
+if __name__ == "__main__":
+
+#проверяем задание 1 
+    with open("test_source.txt", "w", encoding="utf-8") as f:
+        f.write("Привет! Это данные для копирования.")
+
+    if copy_file("test_source.txt", "test_destination.txt"):
+        print("Успех: Файл скопирован и существует!")
+    
+    else:
+        print("Ошибка: Что-то пошло не так.")
+
+#проверяем задание 4
+    main()
